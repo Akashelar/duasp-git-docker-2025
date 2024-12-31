@@ -1,0 +1,12 @@
+
+
+services:
+  flask-2025:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    restart: always
