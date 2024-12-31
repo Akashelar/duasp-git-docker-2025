@@ -9,7 +9,7 @@ facts = [
     "2025 marks the 100th anniversary of the first successful human kidney transplant.",
     "The Mars 2025 mission is planned to send astronauts to the red planet!",
     "By 2025, experts predict AI will be integrated into every aspect of our daily lives.",
-    "In 2025, self-driving cars are expected to be common on the roads. VERSION1"
+    "In 2025, self-driving cars are expected to be common on the roads. VERSION 1"
 ]
 
 @app.route('/')
