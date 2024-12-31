@@ -1,18 +1,21 @@
 name: Docker Image CI
-
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}       
+      run: |     
+       
+        docker build . --file Dockerfile --tag $USER/duasp-ci-demo-2025:v1
+        docker login -u $USER -p $PASS        
+        docker push $USER/duasp-ci-demo-2025:v1
+        cat /etc/os-release
